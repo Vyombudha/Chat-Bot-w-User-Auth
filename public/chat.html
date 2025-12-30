@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat BOT</title>
+    <link rel="stylesheet" href="./css/chat.css">
+    <link rel="shortcut icon" href="./img/ollamaIcon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono&family=Oswald&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="sidebar">
+
+            <div class="newChat">
+                <span class="material-symbols-outlined">
+                    add_notes
+                </span>
+
+                <span>New Chat</span>
+            </div>
+
+            <div class="chatsBar">
+
+            </div>
+        </div>
+
+        <div class="main">
+
+            <div class="header">
+
+                <div class="left">
+                    <span class="material-symbols-outlined" id="slidebar">
+                        left_panel_close
+                    </span>
+
+
+
+
+                    <span>Ollama Bot</span>
+                </div>
+
+                <div class="middle">
+
+                </div>
+
+                <div class="right">
+                    <span class="material-symbols-outlined" id="logout">
+                        logout
+                    </span>
+                    <span class="material-symbols-outlined">
+                        info
+                    </span>
+                </div>
+
+
+            </div>
+
+            <div class="content">
+                <!-- it will be reloaded as .innerText = '' before each new chat is Loaded! -->
+                <div class="chatArea">
+                </div>
+                <!-- it will be resizing dynamically upto 30% of content's max height and then become scrollable -->
+                <textarea id="prompt" placeholder="Ask Anything..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/chat.js"></script>
+</body>
+
+</html>

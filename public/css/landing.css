@@ -1,0 +1,122 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(26, 188, 156);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.login {
+    margin-top: 10vh;
+    height: 66vh;
+    width: 25vw;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(23, 161, 133);
+
+
+    margin-bottom: 10vh;
+    width: 100%;
+    /* 100% of vw of parent i.e 20vw! */
+
+    height: 25%;
+    /* 25% of vh of parent i.e 20% of 67vh! */
+
+    text-align: center;
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+    font-weight: 700;
+    color: rgb(230, 226, 218);
+}
+
+.container h2 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.creditentials {
+    width: 100%;
+    height: 75%;
+    margin-top: 1vh;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+input {
+    border: solid 0.5px rgb(172, 161, 161);
+    outline: none;
+}
+
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    gap: 15px;
+
+    margin-left: 43%;
+    margin-bottom: 3vh;
+}
+
+#login {
+    border: none;
+
+    background-color: rgb(23, 161, 133);
+
+
+    margin-top: 1vh;
+    margin-left: 20%;
+
+    width: 60%;
+    height: 10%;
+
+
+    font-family: "Oswald", sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#login:hover {
+    background-color: rgb(26, 188, 156);
+    transform: scale(1.02);
+}
+
+#registerSpan {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+    margin-left: 30%;
+}
+
+#register {
+    color: rgb(23, 161, 133);
+    text-decoration: none;
+}
+
+#register:visited,
+#register:hover,
+#register:active {
+    text-decoration: none;
+}

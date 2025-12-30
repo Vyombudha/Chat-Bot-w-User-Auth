@@ -1,0 +1,260 @@
+body {
+    height: 100vh;
+    /* width: 100vw; */
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    top: 0;
+    max-height: 100vh;
+    width: 20vw;
+    background-color: rgb(24, 24, 24);
+
+    transition: width 0.4s ease-out, padding 0.3s ease;
+
+    overflow-x: hidden;
+    /* Critical: Hides text as it shrinks */
+    white-space: nowrap;
+    /* Prevents text from wrapping uglily while shrinking */
+
+
+    overflow-y: auto;
+    /* still scrollable */
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE / old Edge */
+}
+
+
+.sidebar.collapsed {
+    width: 0vw;
+    padding: 0;
+    /* Remove padding so it truly disappears */
+    border: none;
+}
+
+.newChat {
+
+
+    height: 5vh;
+
+
+    display: flex;
+    flex-direction: row;
+
+
+    border-radius: 30px;
+    border: none;
+    outline: none;
+
+
+    gap: 10px;
+    padding: 5px;
+    margin: 5px;
+
+    align-content: center;
+}
+
+.newChat:hover {
+    background-color: rgb(39, 38, 38);
+    cursor: pointer;
+}
+
+.newChat:focus-within {
+    background-color: rgb(24, 24, 24);
+}
+
+
+
+
+.newChatName {
+    height: 35px;
+    width: 100%;
+
+    display: block;
+
+    background-color: rgb(39, 38, 38);
+
+
+    border-radius: 30px;
+    border: none;
+    outline: none;
+
+    padding: 5px;
+    margin: 5px;
+
+
+    color: white;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+.chats {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+
+    text-align: start;
+}
+
+
+
+.chats:hover {
+    cursor: pointer;
+    background-color: rgb(39, 38, 38);
+}
+
+
+
+
+
+
+
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100%;
+    flex: 1;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+
+    background-color: rgb(33, 33, 33);
+    border-bottom: solid rgb(104, 96, 96) 2px;
+    height: 5%;
+}
+
+
+.header .material-symbols-outlined {
+    cursor: pointer;
+    color: white;
+
+}
+
+
+.header .material-symbols-outlined:hover {
+    background-color: rgb(55, 54, 54);
+}
+
+.right,
+.left,
+.middle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+.content {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    background-color: rgb(33, 33, 33);
+}
+
+
+.chatArea {
+    max-height: 95%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    /* still scrollable */
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE / old Edge */
+}
+
+.user,
+.assistant {
+    padding: 12px;
+    margin: 20px;
+    line-height: 2;
+    border-radius: 18px;
+    word-wrap: break-word;
+}
+
+
+.user {
+    align-self: flex-end;
+    max-width: 65%;
+    background-color: rgb(40, 42, 44);
+    border: none;
+    outline: none;
+}
+
+.assistant {
+    align-self: flex-start;
+    max-width: 80%;
+    border: none;
+    outline: none;
+}
+
+
+
+
+#prompt {
+    width: 80%;
+
+    min-height: 5%;
+    /* Scrollbar behavior */
+    overflow-y: hidden;
+    /* Hide scrollbar while growing */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    resize: none;
+
+
+    color: white;
+    background-color: rgb(66, 65, 65);
+    box-sizing: border-box;
+    padding: 30px 30px 10px 10px;
+    border: none;
+    outline: none;
+    border-radius: 26px;
+    /* The secret for perfect curves */
+    padding: 12px;
+    margin-left: 10%;
+
+    transition: height 0.3s ease-out;
+    /* Makes the expansion feel "fluid" */
+
+}
