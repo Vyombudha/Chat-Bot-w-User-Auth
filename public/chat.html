@@ -3,8 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
     <title>Chat BOT</title>
     <link rel="stylesheet" href="./css/chat.css">
     <link rel="shortcut icon" href="./img/ollamaIcon.ico" type="image/x-icon">
@@ -18,7 +25,7 @@
 <body>
     <div class="container">
 
-        <div class="sidebar">
+        <div class="sidebar collapsed">
 
             <div class="newChat">
                 <span class="material-symbols-outlined">
@@ -33,7 +40,7 @@
             </div>
         </div>
 
-        <div class="main">
+
 
             <div class="header">
 
@@ -41,17 +48,10 @@
                     <span class="material-symbols-outlined" id="slidebar">
                         left_panel_close
                     </span>
-
-
-
-
                     <span>Ollama Bot</span>
                 </div>
-
                 <div class="middle">
-
                 </div>
-
                 <div class="right">
                     <span class="material-symbols-outlined" id="logout">
                         logout
@@ -60,9 +60,8 @@
                         info
                     </span>
                 </div>
-
-
             </div>
+              
 
             <div class="content">
                 <!-- it will be reloaded as .innerText = '' before each new chat is Loaded! -->
@@ -71,10 +70,11 @@
                 <!-- it will be resizing dynamically upto 30% of content's max height and then become scrollable -->
                 <textarea id="prompt" placeholder="Ask Anything..."></textarea>
             </div>
+     
+  
         </div>
-    </div>
 
-    <script src="./js/chat.js"></script>
+    <script src="./js/chat.js" type="module"></script>
 </body>
 
 </html>

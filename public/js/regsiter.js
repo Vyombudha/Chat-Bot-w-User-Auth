@@ -1,3 +1,5 @@
+
+
 /**
  * 
  * @returns {object} the userName, email and password from register form in an object
@@ -14,7 +16,7 @@ function getValues() {
 
 
 let registerBtn = document.getElementById("register");
-
+ 
 
 registerBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -46,7 +48,8 @@ registerBtn.addEventListener("click", (e) => {
  */
 async function registerUser(email, userName, password) {
     try {
-        const response = await fetch('http://10.21.4.255:3001/user/register', {
+        const baseURL = 'http://localhost:3001';
+        const response = await fetch(`${baseURL}/user/register`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

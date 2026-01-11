@@ -29,7 +29,6 @@ app.use(cors({
 
 // serve Landing Page for first '/' page
 app.get('/', (req, res) => {
-
     res.sendFile(path.join(__dirname, 'public', 'landing.html'));
 });
 

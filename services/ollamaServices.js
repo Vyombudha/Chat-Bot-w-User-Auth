@@ -4,7 +4,7 @@ const LLM_MODEL = "llama2:latest";
 /**
  * Takes the whole messages conversation and returns a response object from the assistant
  * @param {Array<object>} messages the different messages between the assitant and user 
- * @returns {object} the resposne object as {role : 'assitant' , content : 'hi user!, I am chatBot here to help you' };
+ * @returns {object} the resposne object as {role : 'assistant' , content : 'hi user!, I am chatBot here to help you' };
  * @throws - Ollama Server Errors
  */
 export async function sendMessages(messages) {

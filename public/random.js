@@ -7,7 +7,6 @@ let p = new Promise(resolve => {
     }, 1000);
 });
 
-
 p.then(val => console.log(val)
 );
 

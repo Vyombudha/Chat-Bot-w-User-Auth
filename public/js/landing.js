@@ -34,7 +34,8 @@ logInBtn.addEventListener("click", () => {
 
 async function logInUser(email, password) {
     try {
-        const response = await fetch("http://10.21.4.255:3001/user/login", {
+        const baseURL = 'http://localhost:3001';
+        const response = await fetch(`${baseURL}/user/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

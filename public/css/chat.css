@@ -1,23 +1,71 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
-    height: 100vh;
-    /* width: 100vw; */
+    height: 100%;
+    width: 100%;
     margin: 0;
-    padding: 0;
     color: white;
 }
 
 
+
+
+
 .container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'sidebar content';
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
 }
 
+
+
+.header {
+
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+
+    background-color: rgb(33, 33, 33);
+    border-bottom: solid rgb(104, 96, 96) 2px;
+}
+
+.header .material-symbols-outlined {
+    cursor: pointer;
+    color: white;
+
+}
+
+
+.header .material-symbols-outlined:hover {
+    background-color: rgb(55, 54, 54);
+}
+
+.right,
+.left,
+.middle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bolder;
+}
+
+
+
+
+
+
 .sidebar {
-    top: 0;
-    max-height: 100vh;
-    width: 20vw;
+
+    grid-area: sidebar;
+
+    width: 60vw;
     background-color: rgb(24, 24, 24);
 
     transition: width 0.4s ease-out, padding 0.3s ease;
@@ -27,27 +75,18 @@ body {
     white-space: nowrap;
     /* Prevents text from wrapping uglily while shrinking */
 
-
     overflow-y: auto;
-    /* still scrollable */
-    /* Hide scrollbar */
     scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE / old Edge */
 }
 
 
 .sidebar.collapsed {
-    width: 0vw;
+    width: 0;
     padding: 0;
-    /* Remove padding so it truly disappears */
     border: none;
 }
 
 .newChat {
-
-
     height: 5vh;
 
 
@@ -80,8 +119,7 @@ body {
 
 
 .newChatName {
-    height: 35px;
-    width: 100%;
+    height: 10%;
 
     display: block;
 
@@ -106,13 +144,28 @@ body {
 
 
 .chats {
+    width: 100%;
     padding: 10px;
     border: none;
     border-radius: 20px;
 
     text-align: start;
+
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
 }
 
+
+.chats p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chats .deleteBtn{
+    flex-shrink: 0;
+}
 
 
 .chats:hover {
@@ -122,69 +175,22 @@ body {
 
 
 
-
-
-
-
-
-
-.main {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    max-height: 100%;
-    flex: 1;
-}
-
-
-.header {
-    display: flex;
-    justify-content: space-between;
-
-
-    background-color: rgb(33, 33, 33);
-    border-bottom: solid rgb(104, 96, 96) 2px;
-    height: 5%;
-}
-
-
-.header .material-symbols-outlined {
-    cursor: pointer;
-    color: white;
-
-}
-
-
-.header .material-symbols-outlined:hover {
-    background-color: rgb(55, 54, 54);
-}
-
-.right,
-.left,
-.middle {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: bolder;
-}
-
-
-
-
-
-
-
 .content {
-    width: 100%;
-    flex: 1;
 
+    grid-area: content;
     display: flex;
     flex-direction: column;
 
     overflow: hidden;
     background-color: rgb(33, 33, 33);
+
+
 }
 
+
+.content.overlapped {
+    opacity: 0.5;
+}
 
 .chatArea {
     max-height: 95%;
@@ -197,9 +203,7 @@ body {
     /* still scrollable */
     /* Hide scrollbar */
     scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE / old Edge */
+
 }
 
 .user,
@@ -238,7 +242,7 @@ body {
     overflow-y: hidden;
     /* Hide scrollbar while growing */
     scrollbar-width: none;
-    -ms-overflow-style: none;
+ 
 
     resize: none;
 
@@ -257,4 +261,16 @@ body {
     transition: height 0.3s ease-out;
     /* Makes the expansion feel "fluid" */
 
+}
+
+
+@media (min-width:768px) {
+
+    .content.overlapped {
+        opacity: 1;
+    }
+
+    .sidebar {
+        width: 20vw;
+    }
 }
